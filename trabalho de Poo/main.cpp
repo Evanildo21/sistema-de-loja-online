@@ -2,14 +2,22 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "figura.hpp"
+
 using namespace std;
 
 
 
 int main()
 {
-ola();
+    while (true)
+    {
+        cout<< " menu "<<endl;
+        cout<< " menu "<<endl;
+        cout<< " menu "<<endl;
+        cout<< " menu "<<endl;
+        
+    }
+    
 
     return 0;
 }
