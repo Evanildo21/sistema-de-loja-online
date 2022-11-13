@@ -1,12 +1,11 @@
 #ifndef produto_h
 #define produto_h
-#include <string>
-#include <iostream>
-#include "cliente.hpp"
+
 using namespace std;
 
 class produto{
   private:
+    int quantidade;
     string modelo;
     string marca;
     int numero_calcado;
@@ -15,19 +14,29 @@ class produto{
     double preco;
   public:
     produto(){
-
-    }
-    void set_modelo(){
-
-    }
-    void set_marca(){
-
-    }
-    void set_numero_calcado(){
-
+        cout<<"codigo do produto"<<endl; cin>> codigo_produto;
+        cout<<"tipo de calçado "<<endl; cin>>modelo;
+        cout<<"marca "<<endl; cin>>marca;
+        cout<<"numero do calçado "<<endl; set_numero_calcado();
+        cout<<"cor "<<endl; cin>>cor;
+        cout<<"preço "<<endl; cin >> preco;
+        cout<<"quantidade "; cin>>quantidade;
+        
     }
     void set_cor(){
 
+    }
+    void set_numero_calcado(){
+      int numero;
+      cin>>numero;
+      if(numero>10){
+        if(numero%2==0){
+          numero_calcado=numero-1;
+        }else{
+           numero_calcado=numero;
+        }
+
+      }
     }
     void set_codigo_produto(){
 
@@ -41,16 +50,21 @@ class produto{
     string get_cor(){ return cor;}
     int get_codigo_produto(){return codigo_produto; }
     double get_preco(){ return preco;}
+    int get_quantidade(){return quantidade;}
 
-    void verificar(){
-
+    void set_quantidade(int new_quantidade){
+      if(new_quantidade>=0){
+      quantidade=new_quantidade;}
     }
+    
     void info_prod(){
-      cout << "produto: "<<modelo<<endl;
-      cout << "marca: "<<marca<<endl;
-      cout << "numero do calçado: "<<numero_calcado<<endl;
-      cout << "cor: "<<cor<<endl;
-      cout << "preço: "<<preco<<endl;
+              cout<<"codigo: "<<get_codigo_produto()<<endl;
+              cout<<"produto: "<<get_modelo()<<endl;
+              cout<<"marca: "<<get_marca()<<endl;
+              cout<<"numero calçado: "<<get_numero_calcado()<<"-"<<get_numero_calcado()+1<<endl;
+              cout<<"cor: "<<get_cor()<<endl;
+              cout<<"valor: "<<get_preco()<<endl;
+              cout<<"quantidade disponivel: "<<get_quantidade()<<endl;
     }
 }; 
 

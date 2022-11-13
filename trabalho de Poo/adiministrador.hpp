@@ -1,25 +1,33 @@
 #ifndef administrador_h
 #define administrador_h
-#include "ususario.hpp"
+#include "usuario.hpp"
 #include <string>
-#include "estoque.hpp"
+
 using namespace std;
 
 
 class adm: public usuario{
   private: 
-  string nome;
-  estoque estoque_calcado;
   static int id;
   public:
-    adm(string email,string senha):usuario(email,senha,1){
-      cout<<"nome completo ";
-      cin>>nome;
-      id++;
+    adm(string nome=" ",string email="",string senha=""):usuario(nome,email,senha,2){
+     
+      cout<<"seja bem vindo "<<nome;
     }
-    void add_estoque(produto prod){
-      estoque_calcado.add_estoque(prod);
+    void add_novo_produto(){
+      estoque_calcado.cadastrar_new_prod();
     }
+    void add_new_quantidade_produto(){
+      int identificador;
+      int new_quantidade;
+      cout<<"digite o codigo do produto"<<endl;
+      cin>>identificador;
+      cout<<"digite a nova quantidade de produtos"<<endl;
+      cin>> new_quantidade;
+      estoque_calcado.add_estoque(identificador,new_quantidade);
+    }
+  
+ 
 }; 
 
 int adm::id=0;
