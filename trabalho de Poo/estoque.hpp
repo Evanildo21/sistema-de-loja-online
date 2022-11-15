@@ -33,11 +33,13 @@ class estoque{
            for(int i=0;i<lista.size();i++){
               cout<<"-------------------------"<<endl;
               lista[i]->info_prod();
+              cout<<"quantidade disponivel: "<<lista[i]->get_quantidade()<<endl;
            }
         }
         void remover_estoque(int codigo,int quantidade,carrinho *carrinho_cliente){
             for(int i=0;i<lista.size();i++){
               if((lista[i]->get_codigo_produto()==codigo) && (lista[i]->get_quantidade()>=quantidade)){
+                 cout<<"digite o endereço para entrega: "; string endereco; cin>>endereco; lista[i]->set_endereço(endereco);
                  carrinho_cliente->add_carrinho(lista[i],quantidade);
                  quantidade_produto_estoque=quantidade_produto_estoque-quantidade;
                  lista[i]->set_quantidade(lista[i]->get_quantidade()-quantidade);

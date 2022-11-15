@@ -59,6 +59,7 @@ class usuario{
     string get_nome(){return nome;}
     int get_tipo(){return tipo;}
     void ver_estoque(){
+  
      estoque_calcado.ver_lista();
     }
    

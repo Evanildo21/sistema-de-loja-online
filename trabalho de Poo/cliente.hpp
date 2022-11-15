@@ -1,7 +1,7 @@
 #ifndef cliente_h
 #define cliente_h
 #include "usuario.hpp"
-#include "pedido.hpp"
+
 using namespace std;
 
 class cliente: public usuario{
@@ -20,7 +20,11 @@ class cliente: public usuario{
         
          meu_carrinho.lista_de_produtos_no_carrinho();
   }
-  
+  carrinho * get_carrinho(){
+       return &meu_carrinho;}
+  int num_pedidos(){
+    return meu_carrinho.get_numero_de_pedidos();
+  }
 }; 
 
 

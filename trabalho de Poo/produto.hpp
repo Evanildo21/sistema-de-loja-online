@@ -12,6 +12,7 @@ class produto{
     string cor;
     int codigo_produto;
     double preco;
+    string endereço;
   public:
     produto(){
         cout<<"codigo do produto"<<endl; cin>> codigo_produto;
@@ -44,6 +45,11 @@ class produto{
     void set_preco(){
 
     }
+    void set_endereço(string cidade){
+        if((cidade!="")&&(cidade.size()>4)){
+                endereço=cidade;
+        }
+    }
     string get_modelo(){ return modelo;}
     string get_marca(){ return marca;}
     int get_numero_calcado(){ return numero_calcado;}
@@ -51,7 +57,7 @@ class produto{
     int get_codigo_produto(){return codigo_produto; }
     double get_preco(){ return preco;}
     int get_quantidade(){return quantidade;}
-
+    string get_endereco(){return endereço;}
     void set_quantidade(int new_quantidade){
       if(new_quantidade>=0){
       quantidade=new_quantidade;}
@@ -64,7 +70,7 @@ class produto{
               cout<<"numero calçado: "<<get_numero_calcado()<<"-"<<get_numero_calcado()+1<<endl;
               cout<<"cor: "<<get_cor()<<endl;
               cout<<"valor: "<<get_preco()<<endl;
-              cout<<"quantidade disponivel: "<<get_quantidade()<<endl;
+              
     }
 }; 
 
