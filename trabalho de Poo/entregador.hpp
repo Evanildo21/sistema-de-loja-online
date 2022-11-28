@@ -16,10 +16,31 @@ public:
     }
     void retirar_encomenda(adm *administrador){
      administrador->remover_da_fila();
-         cout<<endl;
-         cout<<"pedido entregue"<<endl;
+     
     }
-
+     void inf(){
+        cout<<"----------entregdores--------------------"<<endl;
+        cout<<"funcionario: "<<get_nome()<<" ";
+        cout<<"email: "<<get_email()<<" ";
+        cout<<"senha: "<<get_senha()<<endl;
+    }
+    void menu_entregador(adm *auxiliar){
+      int comando=0;
+    
+    while(comando!=3){
+        cout<<" menu "<<endl;
+        cout<<"[1] ver lista de entregas "<<endl;
+        cout<<"[2] remover da lista" <<endl;
+        cout<<"[3] sair  "<<endl;
+        comando=numero();
+        if(comando==1){
+            ver_produtos(auxiliar);
+        }else if(comando==2){
+            retirar_encomenda(auxiliar);
+        }else{
+            comando=3;
+        }
+}}
 };
 
 
